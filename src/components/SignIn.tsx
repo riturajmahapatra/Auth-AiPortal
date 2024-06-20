@@ -45,6 +45,7 @@ const SignInForm: React.FC = () => {
     <>
       {isLoggedIn ? (
         <div>
+          {/* <Dashboard/> */}
           <p>Welcome! You are logged in.</p>
           <button onClick={handleLogout}>Logout</button>
         </div>
@@ -86,6 +87,14 @@ const SignInForm: React.FC = () => {
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                 />
+                <div className="flex flex-col items-center justify-between w-full px-3 py-2 border rounded focus:outline-none">
+                  <span className="text-gray-400 text-xl ">
+                    demo credentials
+                  </span>{' '}
+                  email : demo@gmail.com
+                  <br />
+                  password: demo
+                </div>
               </div>
               <button
                 type="submit"
