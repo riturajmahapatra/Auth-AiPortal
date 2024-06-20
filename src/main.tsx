@@ -7,6 +7,8 @@ import Error from "./components/Error.tsx";
 import SignInForm from "./components/SignIn.tsx";
 import PrivateRoute from "./components/PrivateRoutes.tsx";
 import Dashboard from "./components/Dashboard.tsx";
+import { Provider } from "react-redux";
+import { store } from "./app/store.ts";
 
 // const [isLogged, setIsLogged] = useState(false);
 
@@ -31,6 +33,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
