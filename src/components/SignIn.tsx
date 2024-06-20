@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 interface SignInCredentials {
   username: string;
@@ -10,9 +11,9 @@ interface SignInCredentials {
 const SignInForm: React.FC = () => {
   const navigate = useNavigate();
   const [formState, setFormState] = useState<SignInCredentials>({
-    username: '',
-    password: '',
-    email: '',
+    username: "",
+    password: "",
+    email: "",
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -26,28 +27,20 @@ const SignInForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formState.email === 'demo@gmail.com' && formState.password === 'demo') {
-      // Simulating successful login
+    if (formState.email === "demo@gmail.com" && formState.password === "demo") {
       setIsLoggedIn(true);
-      // Navigate to the dashboard route
-      // navigate('/dashboard');
+      localStorage.setItem("authToken", "your-auth-token");
+      navigate("/dashboard");
     } else {
-      alert('Invalid credentials');
+      alert("Invalid credentials");
     }
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    window.location.reload();
   };
 
   return (
     <>
       {isLoggedIn ? (
         <div>
-          {/* <Dashboard/> */}
-          <p>Welcome! You are logged in.</p>
-          <button onClick={handleLogout}>Logout</button>
+          <Dashboard />
         </div>
       ) : (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -90,7 +83,7 @@ const SignInForm: React.FC = () => {
                 <div className="flex flex-col items-center justify-between w-full px-3 py-2 border rounded focus:outline-none">
                   <span className="text-gray-400 text-xl ">
                     demo credentials
-                  </span>{' '}
+                  </span>{" "}
                   email : demo@gmail.com
                   <br />
                   password: demo

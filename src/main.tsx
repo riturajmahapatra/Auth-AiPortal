@@ -1,29 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
-import './index.css';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Error from './components/Error.tsx';
-import SignInForm from './components/SignIn.tsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.tsx";
+import "./index.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Error from "./components/Error.tsx";
+import SignInForm from "./components/SignIn.tsx";
+import PrivateRoute from "./components/PrivateRoutes.tsx";
+import Dashboard from "./components/Dashboard.tsx";
 
 // const [isLogged, setIsLogged] = useState(false);
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     errorElement: <Error />,
   },
   {
-    path: '/error',
+    path: "/error",
     element: <Error />,
   },
   {
-    path: '/signin',
+    path: "/signin",
     element: <SignInForm />,
   },
+  {
+    path: "/dashboard",
+    element: <PrivateRoute element={<Dashboard />} />,
+  },
 ]);
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
