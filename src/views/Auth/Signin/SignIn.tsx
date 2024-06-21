@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Dashboard from './Dashboard';
-
-interface SignInCredentials {
-  username: string;
-  password: string;
-  email: string;
-}
+import Dashboard from '../../Dashboard/Dashboard';
+import { SignInCredentials } from './types';
 
 const SignInForm: React.FC = () => {
   const navigate = useNavigate();
@@ -95,6 +90,7 @@ const SignInForm: React.FC = () => {
               >
                 Sign In
               </button>
+              ;
             </form>
           </div>
         </div>

@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
-import { Button } from "./ui/button";
+import { useNavigate } from 'react-router-dom';
+import { Button } from '../../components/ui/Button/button';
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -8,9 +8,9 @@ function Dashboard() {
       <div className="font-xl underline">Dashboard</div>
       <Button
         onClick={() => {
-          navigate("/"),
-            console.log("clicked"),
-            localStorage.removeItem("authToken");
+          navigate('/'),
+            console.log('clicked'),
+            localStorage.removeItem('authToken');
         }}
       >
         Logout
