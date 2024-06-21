@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Dashboard from './Dashboard';
 
 interface SignInCredentials {
   username: string;
@@ -27,10 +28,8 @@ const SignInForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (formState.email === 'demo@gmail.com' && formState.password === 'demo') {
-      // Simulating successful login
       setIsLoggedIn(true);
-      // Navigate to the dashboard route
-      // navigate('/dashboard');
+      navigate('/dashboard');
     } else {
       alert('Invalid credentials');
     }
@@ -45,7 +44,7 @@ const SignInForm: React.FC = () => {
     <>
       {isLoggedIn ? (
         <div>
-          {/* <Dashboard/> */}
+          <Dashboard />
           <p>Welcome! You are logged in.</p>
           <button onClick={handleLogout}>Logout</button>
         </div>

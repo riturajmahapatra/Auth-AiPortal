@@ -5,6 +5,7 @@ import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Error from './components/Error.tsx';
 import SignInForm from './components/SignIn.tsx';
+import Dashboard from './components/Dashboard.tsx';
 
 // const [isLogged, setIsLogged] = useState(false);
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: '/signin',
     element: <SignInForm />,
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />,
   },
 ]);
 ReactDOM.createRoot(document.getElementById('root')!).render(
