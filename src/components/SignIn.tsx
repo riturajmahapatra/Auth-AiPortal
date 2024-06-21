@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Dashboard from './Dashboard';
-=======
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Dashboard from "./Dashboard";
->>>>>>> 929f8e817ac499ed613c0742acac7469bf5683a9
 
 interface SignInCredentials {
   username: string;
@@ -17,9 +11,9 @@ interface SignInCredentials {
 const SignInForm: React.FC = () => {
   const navigate = useNavigate();
   const [formState, setFormState] = useState<SignInCredentials>({
-    username: "",
-    password: "",
-    email: "",
+    username: '',
+    password: '',
+    email: '',
   });
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -33,18 +27,12 @@ const SignInForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-<<<<<<< HEAD
     if (formState.email === 'demo@gmail.com' && formState.password === 'demo') {
       setIsLoggedIn(true);
+      localStorage.setItem('authToken', 'your-auth-token');
       navigate('/dashboard');
-=======
-    if (formState.email === "demo@gmail.com" && formState.password === "demo") {
-      setIsLoggedIn(true);
-      localStorage.setItem("authToken", "your-auth-token");
-      navigate("/dashboard");
->>>>>>> 929f8e817ac499ed613c0742acac7469bf5683a9
     } else {
-      alert("Invalid credentials");
+      alert('Invalid credentials');
     }
   };
 
@@ -53,11 +41,6 @@ const SignInForm: React.FC = () => {
       {isLoggedIn ? (
         <div>
           <Dashboard />
-<<<<<<< HEAD
-          <p>Welcome! You are logged in.</p>
-          <button onClick={handleLogout}>Logout</button>
-=======
->>>>>>> 929f8e817ac499ed613c0742acac7469bf5683a9
         </div>
       ) : (
         <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -100,7 +83,7 @@ const SignInForm: React.FC = () => {
                 <div className="flex flex-col items-center justify-between w-full px-3 py-2 border rounded focus:outline-none">
                   <span className="text-gray-400 text-xl ">
                     demo credentials
-                  </span>{" "}
+                  </span>{' '}
                   email : demo@gmail.com
                   <br />
                   password: demo
