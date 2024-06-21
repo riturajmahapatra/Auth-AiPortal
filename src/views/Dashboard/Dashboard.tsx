@@ -9,7 +9,7 @@ function Dashboard() {
       <Button
         onClick={() => {
           navigate('/'),
-            console.log('clicked'),
+            console.log('clicked  '),
             localStorage.removeItem('authToken');
         }}
       >

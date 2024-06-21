@@ -6,7 +6,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import { store } from './app/store.ts';
-import { Dashboard, Error, PrivateRoutes, SignInForm } from './views/index.ts';
+import { Dashboard, Error, PrivateRoutes, SignInForm } from './views';
 
 // const [isLogged, setIsLogged] = useState(false);
 
@@ -34,5 +34,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
