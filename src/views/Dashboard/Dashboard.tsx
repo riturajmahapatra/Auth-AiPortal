@@ -5,7 +5,7 @@ function Dashboard() {
   const navigate = useNavigate();
   return (
     <>
-      <div className="font-xl underline">Dashboard</div>
+      <div className="h-screen font-xl underline">Dashboard</div>
       <Button
         onClick={() => {
           navigate('/'),

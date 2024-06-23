@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Dashboard from '../../Dashboard/Dashboard';
 import { SignInCredentials } from './types';
+import { useAppSelector } from '@/Redux-Toolkits/hooks';
 
 const SignInForm: React.FC = () => {
+  const theme = useAppSelector((state) => state.theme.theme);
   const navigate = useNavigate();
+
   const [formState, setFormState] = useState<SignInCredentials>({
     username: '',
     password: '',
@@ -38,7 +41,9 @@ const SignInForm: React.FC = () => {
           <Dashboard />
         </div>
       ) : (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+        <div
+          className={`flex items-center justify-center min-h-screen theme-toggle ${theme}`}
+        >
           <div className="w-full max-w-md p-8 space-y-8 bg-white rounded shadow-xl">
             <h2 className="text-2xl font-bold text-center">Sign In</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -90,7 +95,6 @@ const SignInForm: React.FC = () => {
               >
                 Sign In
               </button>
-              ;
             </form>
           </div>
         </div>
