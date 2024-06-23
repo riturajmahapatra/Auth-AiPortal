@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Dashboard from '../../Dashboard/Dashboard';
 import { SignInCredentials } from './types';
-import { useAppSelector } from '@/Redux-Toolkits/hooks';
+import { useAppSelector } from '@/Redux-Toolkits/Hooks/hooks';
 
 const SignInForm: React.FC = () => {
   const theme = useAppSelector((state) => state.theme.theme);

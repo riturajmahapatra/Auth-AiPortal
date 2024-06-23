@@ -7,8 +7,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { Dashboard, Error, PrivateRoutes, SignInForm } from './views';
-import { store } from './Redux-Toolkits/store.ts';
-import ThemeToggle from './Themes/ThemeToggle/ThemeToggle.tsx';
+import { ThemeToggle } from './Themes/index.ts';
+import { store } from './Redux-Toolkits/Store/store.ts';
 
 // const [isLogged, setIsLogged] = useState(false);
 

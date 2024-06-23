@@ -1,6 +1,6 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '@/Redux-Toolkits/hooks';
-import { setTheme } from '@/Redux-Toolkits/features/themeSlice';
+import { useAppDispatch, useAppSelector } from '@/Redux-Toolkits/Hooks/hooks';
+import { setTheme } from '@/Redux-Toolkits/features/Theme/themeSlice';
 
 interface ThemeToggleProps {
   children: React.ReactNode;
