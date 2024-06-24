@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-
 import { Provider } from 'react-redux';
-
 import { Dashboard, Error, PrivateRoutes, SignInForm } from './views';
 import { ThemeToggle } from './Themes/index.ts';
 import { store } from './Redux-Toolkits/Store/store.ts';
